@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -26,6 +26,7 @@ requirements:
 test:
   commands:
     - sympow -help
+    - sympow -new_data 2
 
 about:
   home: http://files.sagemath.org/spkg/upstream/sympow/index.html
