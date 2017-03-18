@@ -1,7 +1,7 @@
-sed -e "s|../sympow|sympow_bin|g" -i generate.c
-sed -e "s|./sympow|sympow_bin|g" -i disk.c new_data
+sed -i -e "s|../sympow|sympow_bin|g" generate.c
+sed -i -e "s|./sympow|sympow_bin|g" disk.c new_data
 # Change the relative path of new_data to absolute path
-sed -e "s|char PATH\[128\]=\"new_data\"|char PATH\[512\]=\"$PREFIX/bin/sympow_new_data\"|g" -i generate.c
+sed -i -e "s|char PATH\[128\]=\"new_data\"|char PATH\[512\]=\"$PREFIX/bin/sympow_new_data\"|g" generate.c
 
 ./Configure
 make
