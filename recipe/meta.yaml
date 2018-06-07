@@ -1,23 +1,25 @@
 {% set name = "sympow" %}
-{% set version = "1.018.1" %}
-{% set sha256 = "6cd4559e177502c44dbce3b1a6aeab3e6f4d24df1f21e19aaf25f3a0e2d1f042" %}
+{% set version = "1.023" %}
+{% set sha256 = "1ab0297b6ea1516066300bc30f8db6c3c6e66f5d2cfce7cb8ffe38b65d089724" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
-  url: http://mirrors.mit.edu/sage/spkg/upstream/{{ name }}/{{ name }}-{{ version }}.tar.bz2
+  url:  https://salsa.debian.org/science-team/sympow/-/archive/upstream/{{ version }}/sympow-upstream-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 1
   skip: true  # [win]
+  ignore_run_exports:
+    - pari
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+  host:
     - pari
   run:
     # new_data invokes PARI's GP
