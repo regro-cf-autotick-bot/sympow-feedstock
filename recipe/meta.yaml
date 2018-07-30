@@ -1,5 +1,5 @@
 {% set name = "sympow" %}
-{% set version = "1.023" %}
+{% set version = "2.023.3" %}
 {% set sha256 = "1ab0297b6ea1516066300bc30f8db6c3c6e66f5d2cfce7cb8ffe38b65d089724" %}
 
 package:
