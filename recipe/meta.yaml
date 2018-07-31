@@ -22,6 +22,7 @@ requirements:
     - libtool
     - autoconf
     - automake
+    - help2man
   host:
     - pari
   run:
