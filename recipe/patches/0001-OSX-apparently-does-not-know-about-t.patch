@@ -18,7 +18,7 @@ index d02f92d..5925b4f 100755
  echo "	install -d \$(DESTDIR)$PREFIX/share/man/man1" >> $FILE
 -echo "	install -t \$(DESTDIR)$PREFIX/bin sympow" >> $FILE
 -echo "	install -t \$(DESTDIR)$PREFIX/share/man/man1 sympow.1" >> $FILE
-+echo "	install sywpow \$(DESTDIR)$PREFIX/bin" >> $FILE
++echo "	install sympow \$(DESTDIR)$PREFIX/bin" >> $FILE
 +echo "	install sympow.1 \$(DESTDIR)$PREFIX/share/man/man1" >> $FILE
  echo "install-indep: build-indep" >> $FILE
  echo "	install -d \$(DESTDIR)$PREFIX/lib/sympow" >> $FILE
