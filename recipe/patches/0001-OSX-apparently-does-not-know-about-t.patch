@@ -1,18 +1,8 @@
-From 66626883c2d34616f86cd24498df4ec2051c2e74 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
-Date: Wed, 1 Aug 2018 23:55:18 +0000
-Subject: [PATCH] OSX apparently does not know about -t
-
-https://travis-ci.org/conda-forge/sympow-feedstock/builds/410347025#L427
----
- Configure | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
 diff --git a/Configure b/Configure
-index d02f92d..5925b4f 100755
+index d02f92d..bcb6755 100755
 --- a/Configure
 +++ b/Configure
-@@ -352,13 +352,13 @@ echo "	\$(RM) -f config.h Makefile" >> $FILE
+@@ -352,15 +352,15 @@ echo "	\$(RM) -f config.h Makefile" >> $FILE
  echo "install-arch: build-arch" >> $FILE
  echo "	install -d \$(DESTDIR)$PREFIX/bin" >> $FILE
  echo "	install -d \$(DESTDIR)$PREFIX/share/man/man1" >> $FILE
@@ -25,10 +15,11 @@ index d02f92d..5925b4f 100755
  echo "	install -d \$(DESTDIR)$PREFIX/share/sympow" >> $FILE
  echo "	install -d \$(DESTDIR)$PREFIX/share/sympow/datafiles" >> $FILE
 -echo "	install -t \$(DESTDIR)$PREFIX/lib/sympow new_data" >> $FILE
+-echo "	cp -t \$(DESTDIR)$PREFIX/share/sympow standard1.gp standard2.gp standard3.gp" >> $FILE
+-echo "	cp -t \$(DESTDIR)$PREFIX/share/sympow/datafiles datafiles/*.txt datafiles/param_data" >> $FILE
 +echo "	install new_data \$(DESTDIR)$PREFIX/lib/sympow" >> $FILE
- echo "	cp -t \$(DESTDIR)$PREFIX/share/sympow standard1.gp standard2.gp standard3.gp" >> $FILE
- echo "	cp -t \$(DESTDIR)$PREFIX/share/sympow/datafiles datafiles/*.txt datafiles/param_data" >> $FILE
++echo "	cp standard1.gp standard2.gp standard3.gp \$(DESTDIR)$PREFIX/share/sympow" >> $FILE
++echo "	cp datafiles/*.txt datafiles/param_data \$(DESTDIR)$PREFIX/share/sympow/datafiles" >> $FILE
  echo "install: install-arch install-indep" >> $FILE
--- 
-2.18.0
-
+ ####if [ -n "$TAR" ];
+ ####then
