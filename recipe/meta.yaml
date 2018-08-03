@@ -1,23 +1,30 @@
 {% set name = "sympow" %}
-{% set version = "1.018.1" %}
-{% set sha256 = "6cd4559e177502c44dbce3b1a6aeab3e6f4d24df1f21e19aaf25f3a0e2d1f042" %}
+{% set version = "2.023.3" %}
+{% set sha256 = "a03fba6b84c83b1317ae9b4fe8eba67132229c9a1982426c0915f963b5ba674e" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
-  url: http://mirrors.mit.edu/sage/spkg/upstream/{{ name }}/{{ name }}-{{ version }}.tar.bz2
+  url:  https://salsa.debian.org/science-team/sympow/-/archive/upstream/{{ version }}/sympow-upstream-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - patches/0001-OSX-apparently-does-not-know-about-t.patch
 
 build:
   number: 2
   skip: true  # [win]
+  ignore_run_exports:
+    - pari
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - libtool
+    - autoconf
+    - automake
+    - help2man
   host:
     - pari
   run:
