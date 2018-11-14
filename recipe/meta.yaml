@@ -13,7 +13,7 @@ source:
     - patches/0001-OSX-apparently-does-not-know-about-t.patch
 
 build:
-  number: 2
+  number: 1002
   skip: true  # [win]
   ignore_run_exports:
     - pari
