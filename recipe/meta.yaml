@@ -1,6 +1,6 @@
 {% set name = "sympow" %}
-{% set version = "3.0.5" %}
-{% set sha256 = "97ecfe8371bb1ceb827818d41122e09c3a614addc99ec6e241d81a2df2e89b7f" %}
+{% set version = "4.1.4" %}
+{% set sha256 = "fb3cbb6989c0c42eb383eae3e4d53508e050c8b9eeb18a1469b4a354abbdf556" %}
 
 package:
   name: {{ name }}
