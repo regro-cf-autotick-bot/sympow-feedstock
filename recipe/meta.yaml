@@ -10,7 +10,7 @@ source:
   url:  https://salsa.debian.org/science-team/sympow/-/archive/upstream/{{ version }}/sympow-upstream-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
-    - patches/0001-OSX-apparently-does-not-know-about-t.patch
+    # - patches/0001-OSX-apparently-does-not-know-about-t.patch
 
 build:
   number: 1000
