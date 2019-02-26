@@ -1,5 +1,5 @@
 {% set name = "sympow" %}
-{% set version = "4.1.4" %}
+{% set version = "5.0.0" %}
 {% set sha256 = "fb3cbb6989c0c42eb383eae3e4d53508e050c8b9eeb18a1469b4a354abbdf556" %}
 
 package:
@@ -13,7 +13,7 @@ source:
     # - patches/0001-OSX-apparently-does-not-know-about-t.patch
 
 build:
-  number: 1000
+  number: 0
   skip: true  # [win]
   ignore_run_exports:
     - pari
