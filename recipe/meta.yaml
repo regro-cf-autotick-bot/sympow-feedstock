@@ -25,6 +25,7 @@ requirements:
     - autoconf
     - automake
     - help2man
+    - make
   host:
     - pari
   run:
