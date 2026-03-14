@@ -4,6 +4,8 @@ if [[ "$target_platform" == osx-arm64 ]]; then
   export SYMPOW_ENDIANTUPLE=le64
 fi
 
+export ADDBINPATH=no
+
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 ]]; then
   export SYMPOW_EXTRA_MAKE="HELP2MAN=echo"
   touch sympow.1
