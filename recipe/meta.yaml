@@ -1,13 +1,13 @@
 {% set name = "sympow" %}
-{% set version = "2.023.7" %}
-{% set sha256 = "f19a2b428c573f9e4c36a97b736b562e76f4bfc354497abaeb7140632bef3400" %}
+{% set version = "4.0.1" %}
+{% set sha256 = "7e422936da39823f5148475d5f855a18abc9522e09e9544ea454447779648ef2" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://gitlab.com/rezozer/forks/sympow/-/archive/v{{ version }}/sympow-v{{ version }}.tar.gz
+  url: https://gitlab.com/rezozer/forks/sympow/-/archive/v{{ version }}/sympow-v{{ version }}.tar.xz
   sha256: {{ sha256 }}
   patches:
     - 0000-cross.patch
